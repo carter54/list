@@ -27,3 +27,7 @@ torch.onnx.export(
     input_names=['mel_input', 'img_input'],
     output_names=['img_output'],
 )
+
+
+# trtexec --onnx=wav2lip.onnx --saveEngine=wav2lip.trt
+# trtexec --shapes=img_input:1x6x96x96,mel_input:1x1x80x16 --loadEngine=wav2lip.trt
